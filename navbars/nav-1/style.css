@@ -70,3 +70,43 @@ nav header{
     padding: 1em 1.52em;
 
 }
+
+nav header span{
+    border:none;
+    background: transparent;
+    font-size: 1.5em;
+    padding: 0;
+    cursor: pointer;
+    line-height: 1;
+    float: right;
+}
+
+nav footer button{
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: none;
+    padding: 14px;
+    width: 100%;
+    transform-origin: 0 0;
+    transition: transform var(--duration) var(--easing);
+    transition-delay: calc(var(--duration) + (var(--count))/2);
+    cursor: pointer;
+    outline: none;
+    background: #cdcdcd;
+    opacity: 0;
+
+}
+
+nav.closed a,
+nav.closed header{
+    transform: translate(calc(--top) * -1)
+    scaleY(0.1) scaleX(0.2);
+    transition-delay: val(--delay-in);
+    color: transparent;
+}
+
+nav.closed  footer button{
+    transition-delay: 0s;
+    transform: translate(0.7) scaleX(0.2);
+}
