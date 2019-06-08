@@ -44,5 +44,29 @@ nav a{
 }
 
 nav a:hover{
-    background: #efefef;
+    background: #e9e9e9;
+
+}
+
+nav.SubMenuItem a{
+    font-size: .9em;
+    color: #666666;
+    border-left: 2em solid white;
+    padding: .75em;
+    background: linear-gradient(to right, #dddddd 2px, #ffffff 2px)
+}
+
+nav.SubMenuItem a:hover{
+    background: linear-gradient(to right, #dddddd 2px #e9e9e9 2px)
+}
+
+nav header{
+    font-weight: 600;
+    display: block;
+    background: rgba(255,255,255,.5);
+    transform-origin:  0 0;
+    transition: var(--duration) var(--easing), color var(--duration) var(--easing);
+    border-radius: 4px;
+    padding: 1em 1.52em;
+
 }
