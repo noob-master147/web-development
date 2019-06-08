@@ -1,0 +1,48 @@
+*{
+    font-family: tahoma;
+    box-sizing: border-box;
+    color: #333;
+    font-size: 100%;
+    line-height: 1.5;
+}
+
+body{
+    background-image: url(dark-gray-background-4.png);
+    margin: 0;
+    background-size: cover;
+}
+
+nav{
+    --duration:.5s;
+    --easing:ease-in-out;
+    position: relative;
+    width: 220px;
+    margin: 20px;
+
+}
+
+nav ol{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li{
+    margin: -4px 0 0 0;
+}
+
+nav a{
+    display: block;
+    text-decoration: none;
+    background: whitesmoke;
+    transform-origin: 0 0;
+    transition: transform var(--duration) var(--easing), color var(--duration) var(--easing);
+    transition-delay: var(--delay-out);
+    border-radius: 4px;
+    padding: 1em 1.52em
+
+}
+
+nav a:hover{
+    background: #efefef;
+}
