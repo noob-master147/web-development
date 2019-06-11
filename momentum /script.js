@@ -28,9 +28,30 @@ function addZero(n) {
     return(n < 10 ? '0' : '') + n;
 }
 
+// Function to set bgimg according to time
 
+let setBackGround = function()
+{
+    let today = new Date();
+    let hour = today.getHours();
+
+    if(hour < 12){
+        //Morning
+        document.body.style.backgroundImage = "url('./bgimg/morning.jpg')"
+        greeting.textContent = "Good Morning"
+    } else if(hour < 18){
+        //noon
+        document.body.style.backgroundImage = "url('./bgimg/noon2.jpg')"
+        greeting.textContent = "Good Afternoon"
+    } else {
+        //Evening
+        document.body.style.backgroundImage = "url('./bgimg/evening.jpg')"
+        greeting.textContent = "Good Evening"
+    }
+}
 
 
 
 //Run the functions
 showTime()
+setBackGround()
