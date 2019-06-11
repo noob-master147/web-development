@@ -37,14 +37,18 @@ let setBackGround = function()
 
     if(hour < 12){
         //Morning
+        document.body.style.backgroundSize = "cover"
         document.body.style.backgroundImage = "url('./bgimg/morning.jpg')"
         greeting.textContent = "Good Morning"
     } else if(hour < 18){
         //noon
-        document.body.style.backgroundImage = "url('./bgimg/noon2.jpg')"
+        document.body.style.backgroundSize = "cover"
+        document.body.style.backgroundImage = "url('./bgimg/noon.jpg')"
+        document.body.style.color = "#ffffff"
         greeting.textContent = "Good Afternoon"
     } else {
         //Evening
+        document.body.style.backgroundSize = "cover"
         document.body.style.backgroundImage = "url('./bgimg/evening.jpg')"
         greeting.textContent = "Good Evening"
     }
