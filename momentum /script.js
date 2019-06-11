@@ -19,7 +19,7 @@ let showTime = function()
   hour = hour % 12 || 12;
 
   //output the time
-  time.innerHTML = `${hour}:${addZero(min)} ${ampm}`;
+  time.innerHTML = `${hour}:${addZero(min)}:${addZero(sec)} ${ampm}`;
   setTimeout(showTime, 1000);
 }
 
@@ -48,7 +48,7 @@ let setBackGround = function()
     } else {
         //Evening
         document.body.style.backgroundSize = "cover"
-        document.body.style.backgroundImage = "url('./bgimg/evening.jpg')"
+        document.body.style.backgroundImage = "url('./bgimg/evening2.jpg')"
         greeting.textContent = "Good Evening"
     }
 }
