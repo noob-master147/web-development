@@ -54,8 +54,29 @@ let setBackGround = function()
     }
 }
 
+//Get name from the locl storage
+let getName = function()
+{
+  if(localStorage.getItem('name') === null) {
+      name.textContent = '[Enter your Name]'
+  } else {
+      name.textContent = localStorage.getItem('name');
+  }
+}
+
+//Get Focus from the locl storage
+let getFocus = function()
+{
+  if(localStorage.getItem('focus') === null) {
+      focus.textContent = '[Enter your focus]'
+  } else {
+    focus.textContent = localStorage.getItem('focus');
+  }
+}
 
 
 //Run the functions
 showTime()
 setBackGround()
+getName()
+getFocus()
