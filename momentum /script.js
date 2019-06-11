@@ -19,17 +19,16 @@ let showTime = function()
   hour = hour % 12 || 12;
 
   //output the time
-  time.innerHTML = `${hour}:${addZero(min)}:${addZero(sec)} ${ampm}`;
+  time.innerHTML = `${hour}:${addZero(min)} ${ampm}`;
   setTimeout(showTime, 1000);
 }
 
 //Add zeroes
-function addZero(n) {
+function  addZero(n) {
     return(n < 10 ? '0' : '') + n;
 }
 
-// Function to set bgimg according to time
-
+// Function to set bgimg according respect to time
 let setBackGround = function()
 {
     let today = new Date();
@@ -43,7 +42,7 @@ let setBackGround = function()
     } else if(hour < 18){
         //noon
         document.body.style.backgroundSize = "cover"
-        document.body.style.backgroundImage = "url('./bgimg/noon.jpg')"
+        document.body.style.backgroundImage = "url('./bgimg/evening.jpg')"
         document.body.style.color = "#ffffff"
         greeting.textContent = "Good Afternoon"
     } else {
@@ -51,6 +50,21 @@ let setBackGround = function()
         document.body.style.backgroundSize = "cover"
         document.body.style.backgroundImage = "url('./bgimg/evening.jpg')"
         greeting.textContent = "Good Evening"
+    }
+}
+
+//Set name
+let setName = function(e)
+{
+  if(e.type === 'keypress') {
+    //check for enter key
+    if(e.keyCode == 13 || e.which == 13){
+        localStorage.setItem('name', e.target.innerText)
+        name.blur();
+    }
+
+  } else {
+    localStorage.setItem('name', e.target.innerText)
     }
 }
 
@@ -64,6 +78,22 @@ let getName = function()
   }
 }
 
+//Set focus
+let setFocus = function(e)
+{
+    if(e.type === 'keypress') {
+    //check for enter key
+    if(e.keyCode == 13 || e.which == 13){
+        localStorage.setItem('focus', e.target.innerText)
+        focus.blur();
+    }
+
+  } else {
+    localStorage.setItem('focus', e.target.innerText)
+    }
+}
+
+
 //Get Focus from the locl storage
 let getFocus = function()
 {
@@ -74,6 +104,23 @@ let getFocus = function()
   }
 }
 
+let resetValueName = function()
+{
+    document.getElementById('name').innerText = ""
+}
+
+let resetValueFocus = function()
+{
+    document.getElementById('focus').innerText = ""
+}
+
+name.addEventListener('keypress', setName);
+name.addEventListener('blur', setName);
+name.addEventListener('click', resetValueName)
+
+focus.addEventListener('keypress', setFocus);
+focus.addEventListener('blur', setFocus);
+focus.addEventListener('click', resetValueFocus)
 
 //Run the functions
 showTime()
